@@ -1,0 +1,15 @@
+#!/bin/sh
+
+volume=$(amixer get Master | grep -oP '\[\d+%\]' | head -1 | tr -d '[]%')
+
+if [ "$volume" -eq 0 ]; then
+    icon="🔇"
+elif [ "$volume" -le 30 ]; then
+    icon="🔈"
+elif [ "$volume" -le 70 ]; then
+    icon="🔉"
+else
+    icon="🔊"
+fi
+
+echo $icon

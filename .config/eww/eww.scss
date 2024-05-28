@@ -1,0 +1,46 @@
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.bar {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+// Styles on classes
+.space {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.bar-center {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.control_center {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.space_control_center {
+  padding-left: 2px;
+  padding-right: 3px;
+}
+
+.time {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+

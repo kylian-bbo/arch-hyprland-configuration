@@ -1,8 +1,8 @@
-# Arch Linux/Hyprland dotfiles
+# Arch Linux/Hyprland configuration
 
 Voici des notes sur mes découvertes et avancées faites durant la configuration de Arch Linux avec le gestionnaire de fenêtres Hyprland.
 
-Je rajouterais les *.config* et autres dossiers au fur et à mesure jusqu'à finalisation de ce dotfiles.
+Je rajouterais les *.config* et autres dossiers au fur et à mesure.
 
 ## Installation de Arch Linux
 
@@ -31,7 +31,7 @@ archinstall
 
 ### Packages
 
-- nano, kitty [+ gtk4], pcmanfm [gvfs et udisks2 *(pour USB)*], Hyprland [+ wpa_supplicant], firefox, git, yay, pfetch, eww
+- nano, kitty [+ gtk4], pcmanfm [gvfs *(pour USB)*], alsa-utils, Hyprland [+ wpa_supplicant], firefox, git, yay, pfetch, eww, noto-font [emoji et extra]
 
 Et en supplément :
   - xorg-xev *(Pour obtenir des informations sur les touches du clavier, utiles pour la gestion de la luminosité par exemple)*
@@ -62,7 +62,7 @@ SUBSYSTEM=="backlight", ACTION=="add", \
 	RUN+="/bin/chgrp USER_NAME /sys/class/backlight/%k/brightness", \
 	RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
 ```
-- Rajouter dans la configuration de Hyprland (exemple dans le cas de mon ordinateur portable) :
+- Rajouter dans la configuration de Hyprland (exemple dans le cas d'un Dell Inspiron) :
 ```
 bind = , XF86MonBrightnessDown, exec, xbacklight -dec 10
 bind = , XF86MonBrightnessUp, exec, xbacklight -inc 10
