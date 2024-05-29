@@ -1,0 +1,84 @@
+(defwindow bar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "10px"
+                      :anchor "bottom center")
+  :stacking "overlay"
+  :exclusive true
+  (bar))
+
+
+(defwidget bar []
+  (centerbox :orientation "h"
+    (bar_left)
+    (bar_center)
+    (bar_right)))
+
+
+
+(defwidget bar_left []
+    (box :orientation "h"))
+
+
+
+(defwidget bar_center []
+    (box :orientation "h"))
+
+
+
+(defwidget bar_right []
+    (box :orientation "h"
+         :halign "end"
+         :space-evenly false
+         :spacing 14
+    (control_center)
+    (time)))
+
+(defwidget control_center []
+  (box :orientation "h"
+       :class "control_center"
+       :space-evenly false
+       :spacing 18
+    (wifi)
+    (volume)
+    (battery)))
+
+(defwidget wifi []
+  (box :orientation "h"
+       :space-evenly false
+  wifi))
+
+(defwidget volume []
+  (box :orientation "h"
+       :space-evenly false
+  volume))
+
+(defwidget battery []
+  (box :orientation "h"
+       :space-evenly false
+       :spacing 6
+  battery_icon
+  battery_percentage))
+
+(defwidget time []
+  (box :orientation "h"
+       :class "time"
+    time))
+
+
+(defpoll wifi :interval "10s"
+  "scripts/getwifi")
+
+(defpoll volume :interval "1s"
+  "scripts/getvol")
+
+(defpoll battery_icon :interval "1s"
+  "scripts/getbatico")
+
+(defpoll battery_percentage :interval "30s"
+  "scripts/getbatper")
+
+(defpoll time :interval "10s"
+  "date '+%H:%M  %d/%m/%Y'")

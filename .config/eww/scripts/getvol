@@ -3,13 +3,13 @@
 volume=$(amixer get Master | grep -oP '\[\d+%\]' | head -1 | tr -d '[]%')
 
 if [ "$volume" -eq 0 ]; then
-    icon="🔇"
+    icon=""
 elif [ "$volume" -le 30 ]; then
-    icon="🔈"
+    icon=""
 elif [ "$volume" -le 70 ]; then
-    icon="🔉"
+    icon=""
 else
-    icon="🔊"
+    icon=""
 fi
 
 echo $icon

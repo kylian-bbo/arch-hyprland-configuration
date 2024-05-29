@@ -31,7 +31,10 @@ archinstall
 
 ### Packages
 
-- nano, kitty [+ gtk4], pcmanfm [gvfs *(pour USB)*], alsa-utils, Hyprland [+ wpa_supplicant], firefox, git, yay, pfetch, eww, noto-font [emoji et extra]
+- nano, kitty [+ gtk4], pcmanfm [gvfs *(pour USB)*], alsa-utils, Hyprland [+ wpa_supplicant], firefox, git, yay, pfetch, eww, code [libsecret et gnome-keyring *(Pour push)*]
+
+Fonts (probablement pas définitif) :
+  - noto-fonts, nerd-fonts *(Commit Mono)*
 
 Et en supplément :
   - xorg-xev *(Pour obtenir des informations sur les touches du clavier, utiles pour la gestion de la luminosité par exemple)*
