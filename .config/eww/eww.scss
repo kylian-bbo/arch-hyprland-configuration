@@ -1,5 +1,5 @@
 * {
-  all: unset; //Unsets everything so you can style everything from scratch
+  all: unset; //Unsets everything
 }
 
 //Global Styles
@@ -7,30 +7,69 @@
   padding-right: 10px;
   padding-left: 10px;
   padding-bottom: 5px;
+
+  font-family:'CommitMono Nerd Font';
 }
 
 // Styles on classes
-.bar-center {
+.bar_center {
   border: 1px solid #ffffff;
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 11px;
+}
+
+.task_bar {
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.start_menu_icon {
+  border: 1px solid #6a6a6a;
+  border-radius: 11px;
+
+  padding-left: 8px;
+  padding-right: 17px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+
+  font-size: 26px;
+}
+
+.app_button {
+  border: 1px solid #6a6a6a;
+  border-radius: 11px;
+  
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .control_center {
   border: 1px solid #ffffff;
-  border-radius: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  border-radius: 11px;
+  
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  
+  font-size: 15px;
 }
 
 .time {
   border: 1px solid #ffffff;
-  border-radius: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  border-radius: 11px;
+
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 4px;
+  
+  font-size: 13px;
+
 }
 
+.hour {
+  font-size: 15px;
+}

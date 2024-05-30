@@ -3,61 +3,14 @@
 battery_percentage_path="/sys/class/power_supply/BAT0/capacity"
 battery_status_path="/sys/class/power_supply/BAT0/status"
 
-if [ -f "$battery_percentage_path" ] && [ -f "$battery_status_path" ]; then
-    battery_percentage=$(cat "$battery_percentage_path")
-    battery_status=$(cat "$battery_status_path")
+icons_battery=("󰂃" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹")
+icons_battery_charging=("󰢟" "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅")
 
-    if [ "$battery_status" = "Charging" ]; then
-        if [ "$battery_percentage" -eq 100 ]; then
-            status="󰂅"
-        elif [ "$battery_percentage" -ge 90 ]; then
-            status="󰂋"
-        elif [ "$battery_percentage" -ge 80 ]; then
-            status="󰂊"
-        elif [ "$battery_percentage" -ge 70 ]; then
-            status="󰢞"
-        elif [ "$battery_percentage" -ge 60 ]; then
-            status="󰂉"   
-        elif [ "$battery_percentage" -ge 50 ]; then
-            status="󰢝"
-        elif [ "$battery_percentage" -ge 40 ]; then
-            status="󰂈"
-        elif [ "$battery_percentage" -ge 30 ]; then
-            status="󰂇"
-        elif [ "$battery_percentage" -ge 20 ]; then
-            status="󰂆"
-        elif [ "$battery_percentage" -ge 10 ]; then
-            status="󰢜"       
-        else
-            status="󰢟"
-        fi
-    else
-        if [ "$battery_percentage" -eq 100 ]; then
-            status="󰁹"
-        elif [ "$battery_percentage" -ge 90 ]; then
-            status="󰂂"
-        elif [ "$battery_percentage" -ge 80 ]; then
-            status="󰂁"
-        elif [ "$battery_percentage" -ge 70 ]; then
-            status="󰂀"
-        elif [ "$battery_percentage" -ge 60 ]; then
-            status="󰁿"   
-        elif [ "$battery_percentage" -ge 50 ]; then
-            status="󰁾"
-        elif [ "$battery_percentage" -ge 40 ]; then
-            status="󰁽"
-        elif [ "$battery_percentage" -ge 30 ]; then
-            status="󰁼"
-        elif [ "$battery_percentage" -ge 20 ]; then
-            status="󰁻"
-        elif [ "$battery_percentage" -ge 10 ]; then
-            status="󰁺"       
-        else
-            status="󰂃"
-        fi
-    fi
+battery_percentage=$(cat "$battery_percentage_path")
+battery_status=$(cat "$battery_status_path")
+
+if [ "$battery_status" = "Charging" ]; then
+   echo "${icons_battery_charging[$battery_percentage / 10]}"
 else
-    status="N/A"
+    echo "${icons_battery[$battery_percentage / 10]}"
 fi
-
-echo $status

@@ -2,8 +2,4 @@
 
 battery_percentage_path="/sys/class/power_supply/BAT0/capacity"
 
-if [ -f "$battery_percentage_path" ]; then
-    echo $(cat "$battery_percentage_path")%
-else
-    text="N/A"
-fi
+echo $(cat "$battery_percentage_path")%

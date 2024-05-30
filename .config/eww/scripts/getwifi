@@ -2,15 +2,9 @@
 
 wifi_status_path="/sys/class/net/wlan0/operstate"
 
-if [ -f "$wifi_status_path" ]; then
-    status=$(cat "$wifi_status_path")
-    if [ "$status" = "up" ]; then
-        text="󰖩"
-    else
-        text=""
-    fi
+status=$(cat "$wifi_status_path")
+if [ "$status" = "up" ]; then
+    echo "󰖩"
 else
-    text="N/A"
+    echo ""
 fi
-
-echo $text

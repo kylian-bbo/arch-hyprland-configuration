@@ -31,13 +31,14 @@ archinstall
 
 ### Packages
 
-- nano, kitty [+ gtk4], pcmanfm [gvfs *(pour USB)*], alsa-utils, Hyprland [+ wpa_supplicant], firefox, git, yay, pfetch, eww, code [libsecret et gnome-keyring *(Pour push)*]
+Principaux :
+- nano, acpilight, alsa-utils, Hyprland [+ wpa_supplicant], eww, kitty [+ gtk4], Thunar [gvfs *(pour USB)*], code [libsecret et gnome-keyring *(Pour push)*], git, yay, brave-bin, pfetch
 
 Fonts (probablement pas définitif) :
-  - noto-fonts, nerd-fonts *(Commit Mono)*
+  - noto-fonts, nerd-fonts *(pour les icônes système - Commit Mono)*
 
 Et en supplément :
-  - xorg-xev *(Pour obtenir des informations sur les touches du clavier, utiles pour la gestion de la luminosité par exemple)*
+  - xorg-xev *(pour obtenir des informations sur les touches du clavier, utiles pour la gestion de la luminosité par exemple)*
 
 ### Installer depuis AUR (Arch User Repository)
 ```
@@ -58,7 +59,7 @@ makepkg -si
 ### Contrôle de la luminosité de l'écran
 
 - Installer le package :
-    - acpilight
+  - acpilight
 - Permettre à l'utilisateur de changer la luminosité sans "sudo" en créant un fichier "99-backlight.rules" dans *"etc\udev\rules.d"* contenant :
 ```
 SUBSYSTEM=="backlight", ACTION=="add", \
@@ -69,4 +70,15 @@ SUBSYSTEM=="backlight", ACTION=="add", \
 ```
 bind = , XF86MonBrightnessDown, exec, xbacklight -dec 10
 bind = , XF86MonBrightnessUp, exec, xbacklight -inc 10
+```
+### Contrôle du volume
+
+- Installer le package :
+  - alsa-utils
+
+- Rajouter dans la configuration de Hyprland (exemple dans le cas d'un Dell Inspiron) :
+```
+bind = , XF86AudioMute, exec, amixer set Master 0%
+bind = , XF86AudioLowerVolume, exec, amixer set Master 2%-
+bind = , XF86AudioRaiseVolume, exec, amixer set Master 2%+
 ```
