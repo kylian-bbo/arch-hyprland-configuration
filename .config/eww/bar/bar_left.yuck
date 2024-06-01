@@ -1,0 +1,13 @@
+(defwidget bar_left []
+    (box :space-evenly false
+    (chatgpt)))
+
+(defwidget chatgpt []
+    (box :class "chatgpt"
+    (chatgpt_button)))
+
+(defwidget chatgpt_button []
+    (button :class "chatgpt_button"
+            :onclick ""
+        (image :path "/home/kylian-bbo/.icons/scalable/apps/chatgpt.svg"
+               :image-width 25)))

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+API_Key=""
+PROMPT="$1"
+MODEL="davinci-002"
+
+RESPONSE=$(curl -s https://api.openai.com/v1/engines/$MODEL/completions \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $API_Key" \
+    -d '{
+        "prompt": "'"$PROMPT"'",
+        "max_tokens": 150
+    }')
+
+echo $RESPONSE

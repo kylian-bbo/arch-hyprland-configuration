@@ -1,0 +1,29 @@
+(defwidget bar_center []
+    (box :class "bar_center"
+         :halign "center"
+         :space-evenly false
+    (task_bar)))
+
+(defwidget task_bar []
+    (box :class "task_bar" 
+         :space-evenly false
+         :spacing 1
+    (start_menu_icon)
+    (app_button :app_name "thunar"
+                :app_icon_path "/home/kylian-bbo/.icons/scalable/apps/thunar.svg")
+    (app_button :app_name "brave-browser"
+                :app_icon_path "/home/kylian-bbo/.icons/scalable/apps/brave.svg")
+    (app_button :app_name "code-oss"
+                :app_icon_path "/home/kylian-bbo/.icons/scalable/apps/code-oss.svg")))
+
+(defwidget start_menu_icon []
+    (button :class "task_bar_button"
+            :onclick ""
+        (image :path "/home/kylian-bbo/.icons/scalable/apps/archlinux.svg"
+               :image-width 28)))
+
+(defwidget app_button [app_name app_icon_path]
+    (button :class "task_bar_button"
+            :onclick "cd ~ && gtk-launch ${app_name}"
+        (image :path app_icon_path
+               :image-width 25)))

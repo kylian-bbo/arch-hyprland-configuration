@@ -1,9 +1,11 @@
+(include "./bar/bar_left.yuck")
+(include "./bar/bar_center.yuck")
+(include "./bar/bar_right.yuck")
+
+
 (defwindow bar
     :monitor 0
-    :geometry (geometry :x "0%"
-                        :y "0%"
-                        :width "100%"
-                        :height "10px"
+    :geometry (geometry :width "100%"
                         :anchor "bottom center")
     :stacking "overlay"
     :exclusive true
@@ -15,98 +17,3 @@
       (bar_left)
       (bar_center)
       (bar_right)))
-
-
-
-(defwidget bar_left []
-    (box))
-
-
-
-(defwidget bar_center []
-    (box :class "bar_center"
-         :halign "center"
-         :space-evenly false
-    (task_bar)))
-
-(defwidget task_bar []
-    (box :class "task_bar" 
-         :space-evenly false
-         :spacing 1
-    (start_menu_icon)
-    (app_button :app_name "thunar"
-                :app_icon_path "/home/kylian-bbo/.icons/scalable/apps/thunar.svg")
-    (app_button :app_name "brave-browser"
-                :app_icon_path "/home/kylian-bbo/.icons/scalable/apps/brave.svg")
-    (app_button :app_name "code-oss"
-                :app_icon_path "/home/kylian-bbo/.icons/scalable/apps/code-oss.svg")))
-
-(defwidget start_menu_icon []
-    (box :class "start_menu_icon"
-    ""))
-
-(defwidget app_button [app_name app_icon_path]
-    (button :class "app_button"
-            :onclick "cd ~ && gtk-launch ${app_name}"
-      (image :path app_icon_path
-             :image-width 26)))
-
-
-
-(defwidget bar_right []
-    (box :halign "end"
-         :space-evenly false
-         :spacing 14
-    (control_center)
-    (time)))
-
-(defwidget control_center []
-    (box :class "control_center"
-         :space-evenly false
-         :spacing 18
-      (wifi)
-      (volume)
-      (battery)))
-
-(defwidget wifi []
-    (box :space-evenly false
-    wifi))
-
-(defwidget volume []
-    (box :space-evenly false
-    volume))
-
-(defwidget battery []
-    (box :space-evenly false
-         :spacing 6
-    battery_icon
-    battery_percentage))
-
-(defwidget time []
-    (box :orientation "v"
-         :class "time"
-         :space-evenly false
-      (hour)
-      date))
-
-(defwidget hour []
-    (box :class "hour"
-    hour))
-
-(defpoll wifi :interval "10s"
-    "scripts/getwifi")
-
-(defpoll volume :interval "1s"
-    "scripts/getvol")
-
-(defpoll battery_icon :interval "2s"
-    "scripts/getbatico")
-
-(defpoll battery_percentage :interval "30s"
-    "scripts/getbatper")
-
-(defpoll hour :interval "10s"
-    "date '+%H:%M'")
-
-(defpoll date :interval "10s"
-    "date '+ %d/%m/%Y'")

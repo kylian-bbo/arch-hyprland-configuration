@@ -1,0 +1,67 @@
+(defwidget bar_right []
+    (box :halign "end"
+         :space-evenly false
+         :spacing 14
+    (control_center)
+    (time)))
+
+(defwidget control_center []
+    (box :class "control_center"
+      (control_center_button)))
+
+(defwidget control_center_button []
+    (button :class "control_center_button"
+            :onclick ""
+        (box :space-evenly false
+            :spacing 18
+        (wifi)
+        (volume)
+        (battery))))
+
+(defwidget wifi []
+    (box :space-evenly false
+    wifi))
+
+(defwidget volume []
+    (box :space-evenly false
+    volume))
+
+(defwidget battery []
+    (box :space-evenly false
+         :spacing 6
+    battery_icon
+    battery_percentage))
+
+(defwidget time []
+    (box :class "time"
+    (time_button)))
+
+(defwidget time_button []
+    (button :class "time_button"
+            :onclick ""
+        (box :orientation "v"
+             :space-evenly false
+        (hour)
+        date)))
+
+(defwidget hour []
+    (box :class "hour"
+    hour))
+
+(defpoll wifi :interval "5s"
+    "scripts/getwifi")
+
+(defpoll volume :interval "1s"
+    "scripts/getvol")
+
+(defpoll battery_icon :interval "2s"
+    "scripts/getbatico")
+
+(defpoll battery_percentage :interval "30s"
+    "scripts/getbatper")
+
+(defpoll hour :interval "10s"
+    "date '+%H:%M'")
+
+(defpoll date :interval "10s"
+    "date '+ %d/%m/%Y'")

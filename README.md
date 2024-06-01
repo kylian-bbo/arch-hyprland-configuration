@@ -32,10 +32,10 @@ archinstall
 ### Packages
 
 Principaux :
-- nano, acpilight, alsa-utils, Hyprland [+ wpa_supplicant], eww, kitty [+ gtk4], Thunar [gvfs *(pour USB)*], code [libsecret et gnome-keyring *(Pour push)*], git, yay, brave-bin, pfetch
+- nano, acpilight, alsa-utils, p7zip, Hyprland [+ wpa_supplicant], eww, kitty [+ gtk4], Thunar [gvfs *(pour USB)*], code [libsecret et gnome-keyring *(Pour push)*], git, yay, brave-bin, pfetch, flatpak, hyprpicker
 
 Fonts (probablement pas définitif) :
-  - noto-fonts, nerd-fonts *(pour les icônes système - Commit Mono)*
+  - noto-fonts, nerd-fonts *(pour les icônes système et code OSS - Commit Mono)*
 
 Et en supplément :
   - xorg-xev *(pour obtenir des informations sur les touches du clavier, utiles pour la gestion de la luminosité par exemple)*

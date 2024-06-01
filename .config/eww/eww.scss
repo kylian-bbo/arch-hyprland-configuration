@@ -1,3 +1,11 @@
+// Colors
+$color_background: #b9b9b9;
+$color_border: #9b9b9b;
+$color_background_hover: #d0d0d0;
+$color_border_hover: #b4b4b4;
+$color_button_border: $color_background;
+$color_text: #000000;
+
 * {
   all: unset; //Unsets everything
 }
@@ -8,13 +16,48 @@
   padding-left: 10px;
   padding-bottom: 5px;
 
-  font-family:'CommitMono Nerd Font';
+  font-family:'Noto Sans Gujarati UI';
+  font-weight: 500;
 }
 
 // Styles on classes
-.bar_center {
-  border: 1px solid #ffffff;
+.bar_left {
+  border: 1px solid $color_background;
   border-radius: 11px;
+}
+
+.chatgpt {
+  border: 1px solid $color_border;
+  border-radius: 11px;
+
+  background-color: $color_background;
+  
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.chatgpt_button {
+  border: 1px solid $color_button_border;
+  border-radius: 11px;
+  
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.chatgpt_button:hover {
+  border: 1px solid $color_background_hover;
+  background-color: $color_background_hover;
+}
+
+.bar_center {
+  border: 1px solid $color_border;
+  border-radius: 11px;
+
+  background-color: $color_background;
 }
 
 .task_bar {
@@ -24,20 +67,8 @@
   padding-bottom: 1px;
 }
 
-.start_menu_icon {
-  border: 1px solid #6a6a6a;
-  border-radius: 11px;
-
-  padding-left: 8px;
-  padding-right: 17px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-
-  font-size: 26px;
-}
-
-.app_button {
-  border: 1px solid #6a6a6a;
+.task_bar_button {
+  border: 1px solid $color_button_border;
   border-radius: 11px;
   
   padding-left: 8px;
@@ -46,28 +77,67 @@
   padding-bottom: 4px;
 }
 
+.task_bar_button:hover {
+  border: 1px solid $color_border_hover;
+  background-color: $color_background_hover;
+}
+
 .control_center {
-  border: 1px solid #ffffff;
+  border: 1px solid $color_border;
   border-radius: 11px;
+
+  background-color: $color_background;
   
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.control_center_button {
+  border: 1px solid $color_button_border;
+  border-radius: 11px;
+
   padding-left: 13px;
   padding-right: 13px;
   padding-top: 4px;
   padding-bottom: 4px;
   
   font-size: 15px;
+  color: $color_text;
+}
+
+.control_center_button:hover {
+  border: 1px solid $color_background_hover;
+  background-color: $color_background_hover;
 }
 
 .time {
-  border: 1px solid #ffffff;
+  border: 1px solid $color_border;
+  border-radius: 11px;
+
+  background-color: $color_background;
+  
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.time_button {
+  border: 1px solid $color_button_border;
   border-radius: 11px;
 
   padding-left: 13px;
   padding-right: 13px;
-  padding-top: 4px;
   
-  font-size: 13px;
+  color: $color_text;
+  font-size: 14px;
+}
 
+.time_button:hover {
+  border: 1px solid $color_background_hover;
+  background-color: $color_background_hover;
 }
 
 .hour {
