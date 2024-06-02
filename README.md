@@ -31,8 +31,14 @@ archinstall
 
 ### Packages
 
-Principaux :
-- nano, acpilight, alsa-utils, p7zip, Hyprland [+ wpa_supplicant], eww, kitty [+ gtk4], Thunar [gvfs *(pour USB)*], code [libsecret et gnome-keyring *(Pour push)*], git, yay, brave-bin, pfetch, flatpak, hyprpicker
+pacman :
+- nano, acpilight, alsa-utils, p7zip, Hyprland [+ wpa_supplicant], eww, kitty [+ gtk4], Thunar [gvfs *(pour USB)*], code [libsecret et gnome-keyring *(Pour push)*], git, yay, flatpak
+
+yay :
+- pfetch, brave-bin, hyprpicker
+
+flatpak :
+- Discord
 
 Fonts (probablement pas définitif) :
   - noto-fonts, nerd-fonts *(pour les icônes système et code OSS - Commit Mono)*
