@@ -1,8 +1,6 @@
 # Arch Linux/Hyprland configuration
 
-Voici des notes sur mes découvertes et avancées faites durant la configuration de Arch Linux avec le gestionnaire de fenêtres Hyprland.
-
-Je rajouterais les *.config* et autres dossiers au fur et à mesure.
+Voici des notes sur mon premier contact avec la configuration de Arch Linux et du gestionnaire de fenêtres Hyprland.
 
 ## Installation de Arch Linux
 
